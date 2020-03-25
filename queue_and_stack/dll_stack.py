@@ -15,6 +15,9 @@ class Stack:  # make class
         self.storage = DoublyLinkedList()
 
     def push(self, value):
+
+        # incriment size
+        self.size += 1
         # Add a number to the Tail
         self.storage.add_to_head(value)
 
@@ -23,6 +26,8 @@ class Stack:  # make class
             # return "Queueue Is Emptyie"
             pass
         else:
+            # decriment size
+            self.size -= 1
             # step 1: print the last item in queue (the head)
             output = self.storage.head.value
             # step 2: delete the last item in queue (the head)
@@ -31,4 +36,5 @@ class Stack:  # make class
 
     def len(self):
         # return the length of the queue
-        return self.storage.length
+        # return self.storage.length
+        return self.size

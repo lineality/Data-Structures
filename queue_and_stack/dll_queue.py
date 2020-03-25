@@ -9,7 +9,7 @@ class Queue:
     # constructor
     def __init__(self):
         # attributes
-        self.size = 0
+        self.size = 0  # this is manually used
         # A Doubly Linked list is used for a queue
         # because it is dynamic in size and easily
         # performs the operations
@@ -17,6 +17,8 @@ class Queue:
 
     # class methods (functions)
     def enqueue(self, value):
+        # increment size
+        self.size += 1
         # Add a number to the Tail
         self.storage.add_to_tail(value)
 
@@ -25,6 +27,8 @@ class Queue:
             # return "Queueue Is Emptyie"
             pass
         else:
+            # decriment size
+            self.size -= 1
             # step 1: print the last item in queue (the head)
             output = self.storage.head.value
             # step 2: delete the last item in queue (the head)
@@ -33,4 +37,5 @@ class Queue:
 
     def len(self):
         # return the length of the queue
-        return self.storage.length
+        # return self.storage.length
+        return self.size
